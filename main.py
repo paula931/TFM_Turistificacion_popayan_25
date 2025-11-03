@@ -1,20 +1,16 @@
-# main.py
+"""
+Script principal: ejecuta el pipeline completo CRISP-DM.
+"""
+
 from src.datos.ingesta import cargar_datos
 from src.modelos.clustering import ejecutar_clustering
 from src.modelos.regresion import ejecutar_regresion
-from src.visualizaciones.graficos import generar_graficos
-from src.agente.inteligente import iniciar_agente
-
-def main():
-    print("Iniciando pipeline CRISP-DM del TFM - Turistificación en Popayán")
-
-    datos = cargar_datos()
-    ejecutar_clustering(datos)
-    ejecutar_regresion(datos)
-    generar_graficos(datos)
-    iniciar_agente(datos)
-
-    print(" Prototipo final ejecutado correctamente")
+from src.agente.agente_inteligente import ejecutar_agente_inteligente
 
 if __name__ == "__main__":
-    main()
+    print("\n=== INICIO PIPELINE TFM TURISTIFICACIÓN ===")
+    datos = cargar_datos()
+    datos_cluster = ejecutar_clustering(datos)
+    ejecutar_regresion()
+    ejecutar_agente_inteligente()
+    print("=== PIPELINE COMPLETADO ===")
