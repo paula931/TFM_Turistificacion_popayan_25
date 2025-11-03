@@ -1,2 +1,1 @@
-# TFM_Turistificacion_popayan_25
-Análisis y predicción de turistificación en Popayán con ML (CRISP-DM)
+# TFM Turistificación en Popayán (2025)
